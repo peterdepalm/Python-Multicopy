@@ -29,5 +29,3 @@ keyboard.add_hotkey('ctrl + v', lambda: depletecopyqueue())
 while True:
     print(copies)
     copies.append(pc.waitForNewPaste())
-
-#input() #don't know why but without this, the script rapidly opens, runs through the code and shuts down when not running it through a terminal
