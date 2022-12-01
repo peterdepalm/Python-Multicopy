@@ -4,7 +4,6 @@ import keyboard
 from collections import deque
 import os
 #TODO: create a branch of this for testing out option to create list of copies as either a stack or a queue
-#TODO: handling of "cannot pop from empty deque" error
 #FIXME: this code currently cannot be used to paste into programs running as administrator. need to fix this.
 #FIXME: infinite append loop bug (happens when there's a ton of background tasks running in pycharm)
 
