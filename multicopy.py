@@ -9,22 +9,24 @@ import os
 
 def depletecopyqueue():
     time.sleep(.5) #might not need this but might be necessary
-    copies.pop()
+    try:
+        copies.pop()
+    except IndexError:
+        return
     try:
         pc.copy(copies.pop())
     except IndexError:
-        os._exit(0)
+        return
 
 
 copies = deque([])
 pc.copy('')
+keyboard.add_hotkey('ctrl + alt + e', lambda: os._exit(0))
 keyboard.add_hotkey('ctrl + shift + v', lambda: depletecopyqueue())
 keyboard.add_hotkey('ctrl + v', lambda: depletecopyqueue())
 
 while True:
-    try:
-        print(copies)
-        copies.append(pc.waitForNewPaste())
-    except
+    print(copies)
+    copies.append(pc.waitForNewPaste())
 
 #input() #don't know why but without this, the script rapidly opens, runs through the code and shuts down when not running it through a terminal
