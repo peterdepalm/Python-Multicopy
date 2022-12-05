@@ -25,6 +25,7 @@ pc.copy('')
 keyboard.add_hotkey('ctrl + alt + e', lambda: os._exit(0))
 keyboard.add_hotkey('ctrl + shift + v', lambda: depletecopyqueue())
 keyboard.add_hotkey('ctrl + v', lambda: depletecopyqueue())
+keyboard.add_hotkey('ctrl + alt + c', lambda: pc.copy(str(list(deque(copies)))))
 
 while True:
     print(copies)
