@@ -19,6 +19,10 @@ def depletecopyqueue():
     except IndexError:
         return
 
+def joinqueue():
+    joiner = input('Enter joiner for copy list: ')
+    joinedlist = joiner.join(list(deque(copies)))
+    pc.copy(joinedlist)
 
 copies = deque([])
 pc.copy('')
@@ -26,6 +30,7 @@ keyboard.add_hotkey('ctrl + alt + e', lambda: os._exit(0))
 keyboard.add_hotkey('ctrl + shift + v', lambda: depletecopyqueue())
 keyboard.add_hotkey('ctrl + v', lambda: depletecopyqueue())
 keyboard.add_hotkey('ctrl + alt + c', lambda: pc.copy(str(list(deque(copies)))))
+keyboard.add_hotkey('ctrl + alt + j', lambda: joinqueue())
 
 while True:
     print(copies)
